@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////////
 //
-// paillier.js: a simple proof-of-concept Javascript implementation of the 
+// paillier.js: a simple proof-of-concept Javascript implementation of the
 // Paillier homomorphic encryption system.
-// 
+//
 // Author: Maarten H. Everts (TNO)
 //
 // Dependencies: jsbn, from http://www-cs-students.stanford.edu/~tjw/jsbn/
@@ -11,12 +11,15 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////
 
+var bn = require("jsbn");
+var BigInteger = bn.BigInteger;
+var SecureRandom = bn.SecureRandom;
 
 function lcm(a,b) {
   return a.multiply(b).divide(a.gcd(b));
 }
 
-paillier = {
+var paillier = {
 	publicKey: function(bits, n) {
 		// bits
 		this.bits = bits;
@@ -97,3 +100,5 @@ paillier.privateKey.prototype = {
 		return c.modPow(this.lambda,this.pubkey.n2).subtract(BigInteger.ONE).divide(this.pubkey.n).multiply(this.x).mod(this.pubkey.n);
 	}
 }
+
+module.exports = paillier;

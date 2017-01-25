@@ -1,0 +1,22 @@
+{
+  "name": "jspaillier",
+  "version": "0.1.0",
+  "description": "A simple proof-of-concept Javascript implementation of the Paillier homomorphic encryption scheme",
+  "main": "paillier.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colatkinson/jspaillier.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colatkinson/jspaillier/issues"
+  },
+  "homepage": "https://github.com/colatkinson/jspaillier#readme",
+  "dependencies": {
+    "jsbn": "^0.1.0"
+  }
+}
